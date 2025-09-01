@@ -1,0 +1,19 @@
+run:
+  timeout: 5m
+  skip-dirs:
+    - vendor
+
+linters:
+  enable:
+    - gofmt
+    - goimports
+    - govulncheck
+    - revive
+    - govet
+    - staticcheck
+    - unused
+    - errcheck
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
