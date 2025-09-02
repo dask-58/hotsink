@@ -7,14 +7,16 @@ run:
 
 linters:
   enable:
-    - gofmt
-    - goimports
-    - govulncheck
-    - revive
+    - errcheck
     - govet
+    - ineffassign
     - staticcheck
     - unused
-    - errcheck
+    - revive
+    - gosec
+    - prealloc
+    - misspell
+    - bodyclose
 
 issues:
   max-issues-per-linter: 0
