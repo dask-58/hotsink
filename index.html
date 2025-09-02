@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -44,10 +44,39 @@
 
             <section id="log" class="card" aria-labelledby="log-title">
                 <h2 id="log-title">Log Entries</h2>
-
-                <article class="log-entry">
-                    <h3>Phase 0:</h3>
-                    <time class="date">September 1, 2025</time>
+                
+                <article class="log-entry collapsible">
+                    <div class="log-header" onclick="toggleLog(this)">
+                        <h3>Add basic TCP proxy server with clean linters and unit tests</h3>
+                        <time class="date">September 2 2025</time>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    
+                    <div class="log-content">
+                        <p>Implemented a simple TCP proxy server in <code>internal/proxy/server.go</code> with:</p>
+                        
+                        <ul>
+                            <li><strong><code>Server struct</code></strong> managing listener, connections, and shutdown.</li>
+                            <li><strong><code>Start() method</code></strong> to accept client connections concurrently.</li>
+                            <li><strong><code>Shutdown() method</code></strong> for graceful stop of the server.</li>
+                            <li><strong>Proper error handling</strong> for all <code>Close()</code> operations.</li>
+                            <li><strong>GoDoc comments</strong> for all exported types and functions to satisfy linters.</li>
+                        </ul>
+                        
+                        <p><strong>Configured golangci-lint compatible code style:</strong></p>
+                        <ul>
+                            <li>Fixed errcheck issues by checking returned errors.</li>
+                            <li>Fixed revive warnings by adding concise documentation.</li>
+                        </ul>
+                        
+                        <p><strong>Added unit test in <code>internal/proxy/server_test.go</code>:</strong></p>
+                        <ul>
+                            <li>Tests server start, accept connections, and shutdown.</li>
+                            <li>Verifies connections can be established and server stops correctly.</li>
+                            <li>Handles connection close errors to satisfy linters.</li>
+                            <li>Ensures clean lint output and GoDoc compliance.</li>
+                        </ul>
+                    </div>
                 </article>
 
             </section>

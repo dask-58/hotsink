@@ -26,5 +26,19 @@
             localStorage.setItem(storageKey, next);
         });
     }
+
+    function toggleLog(headerElement) {
+        const logEntry = headerElement.closest('.log-entry');
+        logEntry.classList.toggle('collapsed');
+    }
+
+    window.toggleLog = toggleLog;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const logEntries = document.querySelectorAll('.log-entry.collapsible');
+        logEntries.forEach(entry => {
+            entry.classList.add('collapsed');
+        });
+    });
 })();
 
