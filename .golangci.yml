@@ -2,8 +2,8 @@ version: "2"
 
 run:
   timeout: 5m
-  skip-dirs:
-    - vendor
+  # skip-dirs:
+  #   - vendor
 
 linters:
   enable:
